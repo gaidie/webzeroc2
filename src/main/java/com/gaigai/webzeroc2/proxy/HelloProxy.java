@@ -33,15 +33,19 @@ public class HelloProxy implements Hello {
 //        helloProxy.say("小盖");
 
         Hello hello = new HelloImpl();
-        DynamicProxy dynamicProxy = new DynamicProxy(hello);
+//        DynamicProxy dynamicProxy = new DynamicProxy(hello);
+//
+////        Hello helloProxy = (Hello) Proxy.newProxyInstance(
+////                hello.getClass().getClassLoader(),
+////                hello.getClass().getInterfaces(),
+////                dynamicProxy
+////        );
+////        helloProxy.say("小洞");
+//        Hello hello1 = dynamicProxy.getProxy();
+//        hello1.say("广场舞");
 
-//        Hello helloProxy = (Hello) Proxy.newProxyInstance(
-//                hello.getClass().getClassLoader(),
-//                hello.getClass().getInterfaces(),
-//                dynamicProxy
-//        );
-//        helloProxy.say("小洞");
-        Hello hello1 = dynamicProxy.getProxy();
-        hello1.say("广场舞");
+        CGLibProxy cgLibProxy = CGLibProxy.getInstance();
+        Hello proxy = cgLibProxy.getProxy(hello.getClass());
+        proxy.say("CGLib代理是个什么鬼");
     }
 }
