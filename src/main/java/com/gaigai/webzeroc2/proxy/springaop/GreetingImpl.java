@@ -1,12 +1,13 @@
 package com.gaigai.webzeroc2.proxy.springaop;
 
+import com.gaigai.webzeroc2.proxy.Greeting;
 import org.springframework.stereotype.Component;
 
 /**
  * Created by Administrator on 2017/5/9.
  */
 @Component
-public class GreetingImpl implements Greeting{
+public class GreetingImpl implements Greeting {
 
     @LogAspect
     @Override

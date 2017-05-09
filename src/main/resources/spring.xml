@@ -28,7 +28,7 @@
     <!-- 配置一个代理 -->
     <!--<bean id="greetingProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
         &lt;!&ndash;方法的动态代理&ndash;&gt;
-        &lt;!&ndash;<property name="interfaces" value="com.gaigai.webzeroc2.proxy.springaop.Greeting"/>&ndash;&gt;
+        &lt;!&ndash;<property name="interfaces" value="com.gaigai.webzeroc2.proxy.Greeting"/>&ndash;&gt;
         &lt;!&ndash;<property name="target" ref="greetingImpl"/>&ndash;&gt;
         &lt;!&ndash;<property name="interceptorNames">&ndash;&gt;
             &lt;!&ndash;<list>&ndash;&gt;

@@ -1,5 +1,6 @@
 package com.gaigai.webzeroc2.proxy.springaop;
 
+import com.gaigai.webzeroc2.proxy.Greeting;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -14,34 +15,34 @@ public class Client {
 //        proxyFactory.addAdvice(new GreetingBeforeAdvice());
 //        proxyFactory.addAdvice(new GreetingAfterAdvice());
 //        Greeting greeting = (Greeting) proxyFactory.getProxy();
-//        greeting.sayHello("springAOP");
+//        greeting.saySorry("springAOP");
 //
 //        ProxyFactory proxyFactory = new ProxyFactory();
 //        proxyFactory.setTarget(new GreetingImpl());
 //        proxyFactory.addAdvice(new GreetingBothAdvice());
 //        Greeting greeting = (Greeting) proxyFactory.getProxy();
-//        greeting.sayHello("advice");
+//        greeting.saySorry("advice");
 
 //        ProxyFactory proxyFactory = new ProxyFactory();
 //        proxyFactory.setTarget(new GreetingImpl());
 //        proxyFactory.addAdvice(new GreetingAroundAdvice());
 //        Greeting greeting = (Greeting) proxyFactory.getProxy();
-//        greeting.sayHello("环绕增强");
+//        greeting.saySorry("环绕增强");
 
 //        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 //        Greeting greeting = (Greeting) context.getBean("greetingProxy");
-//        greeting.sayHello("我是配置文件出来的");
+//        greeting.saySorry("我是配置文件出来的");
 
 //        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 //        GreetingImpl greeting = (GreetingImpl) context.getBean("greetingProxy");
-//        greeting.sayHello("小盖");
+//        greeting.saySorry("小盖");
 //
 //        Apology apology = (Apology) greeting;
 //        apology.saySorry("小盖");
 
         ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
 //        GreetingImpl greeting = (GreetingImpl) context.getBean("greetingImpl");
-//        greeting.sayHello("小盖");
+//        greeting.saySorry("小盖");
 
         Greeting greeting = (Greeting) context.getBean("greetingImpl");
         greeting.sayHello("小盖");
