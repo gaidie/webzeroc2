@@ -28,9 +28,15 @@ public class Client {
 //        Greeting greeting = (Greeting) proxyFactory.getProxy();
 //        greeting.sayHello("环绕增强");
 
-        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
-        Greeting greeting = (Greeting) context.getBean("greetingProxy");
-        greeting.sayHello("我是配置文件出来的");
+//        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+//        Greeting greeting = (Greeting) context.getBean("greetingProxy");
+//        greeting.sayHello("我是配置文件出来的");
 
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+        GreetingImpl greeting = (GreetingImpl) context.getBean("greetingProxy");
+        greeting.sayHello("小盖");
+
+        Apology apology = (Apology) greeting;
+        apology.saySorry("小盖");
     }
 }

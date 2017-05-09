@@ -11,6 +11,14 @@ public class GreetingImpl implements Greeting{
     public void sayHello(String name) {
         System.out.println("Hello " + name);
         //学习一下抛出增强
-        throw new RuntimeException("抛出增强爆出来的错误Error");
+//        throw new RuntimeException("抛出增强爆出来的错误Error");
+    }
+
+    public void goodMorning(){
+        System.out.println("早上好。。。");
+    }
+
+    public void goodNight(){
+        System.out.println("晚上好。。。");
     }
 }
