@@ -15,37 +15,47 @@
 			http://www.springframework.org/schema/util/spring-util.xsd">
     <context:component-scan base-package="com.gaigai.webzeroc2"/>
 
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
 
     <!--配置一个切面-->
-    <bean id="greetingAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">
-        <!--增强-->
-        <property name="advice" ref="greetingIntroAdvice"/>
-        <!--切点 正则表达式-->
-        <property name="pattern" value="com.gaigai.webzeroc2.proxy.springaop.GreetingImpl.good.*"/>
-    </bean>
+    <!--<bean id="greetingAdvisor" class="org.springframework.aop.support.RegexpMethodPointcutAdvisor">-->
+        <!--&lt;!&ndash;增强&ndash;&gt;-->
+        <!--<property name="advice" ref="greetingIntroAdvice"/>-->
+        <!--&lt;!&ndash;切点 正则表达式&ndash;&gt;-->
+        <!--<property name="pattern" value="com.gaigai.webzeroc2.proxy.springaop.GreetingImpl.good.*"/>-->
+    <!--</bean>-->
 
     <!-- 配置一个代理 -->
-    <bean id="greetingProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
-        <!--方法的动态代理-->
-        <!--<property name="interfaces" value="com.gaigai.webzeroc2.proxy.springaop.Greeting"/>-->
-        <!--<property name="target" ref="greetingImpl"/>-->
-        <!--<property name="interceptorNames">-->
-            <!--<list>-->
-                <!--<value>greetingAroundAdvice</value>-->
-                <!--<value>greetingThrowAdvice</value>-->
-            <!--</list>-->
-        <!--</property>-->
-        <!--类的注入-->
+    <!--<bean id="greetingProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+        &lt;!&ndash;方法的动态代理&ndash;&gt;
+        &lt;!&ndash;<property name="interfaces" value="com.gaigai.webzeroc2.proxy.springaop.Greeting"/>&ndash;&gt;
+        &lt;!&ndash;<property name="target" ref="greetingImpl"/>&ndash;&gt;
+        &lt;!&ndash;<property name="interceptorNames">&ndash;&gt;
+            &lt;!&ndash;<list>&ndash;&gt;
+                &lt;!&ndash;<value>greetingAroundAdvice</value>&ndash;&gt;
+                &lt;!&ndash;<value>greetingThrowAdvice</value>&ndash;&gt;
+            &lt;!&ndash;</list>&ndash;&gt;
+        &lt;!&ndash;</property>&ndash;&gt;
+        &lt;!&ndash;类的注入&ndash;&gt;
         <property name="interfaces" value="com.gaigai.webzeroc2.proxy.springaop.Apology"/>
-        <!--  需要动态实现的接口-->
+        &lt;!&ndash;  需要动态实现的接口&ndash;&gt;
         <property name="target" ref="greetingImpl"/>
-        <!--目标类-->
-        <!--<property name="interceptorNames" value="greetingIntroAdvice"/>-->
+        &lt;!&ndash;目标类&ndash;&gt;
+        &lt;!&ndash;<property name="interceptorNames" value="greetingIntroAdvice"/>&ndash;&gt;
         <property name="interceptorNames" value="greetingAdvisor"/>
-        <!--代理目标类 （默认为false，代理接口-->
+        &lt;!&ndash;代理目标类 （默认为false，代理接口&ndash;&gt;
         <property name="proxyTargetClass" value="true"/>
 
 
     </bean>
+-->
+    <!--<bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+       &lt;!&ndash; 为后缀为Impl的生成代理&ndash;&gt;-->
+        <!--<property name="beanNames" value="*Impl"/>-->
+        <!--&lt;!&ndash;增强&ndash;&gt;-->
+        <!--<property name="interceptorNames" value="greetingAroundAdvice"/>-->
+        <!--&lt;!&ndash;是否对代理策略进行优化&ndash;&gt;-->
+        <!--<property name="optimize" value="true"/>-->
+    <!--</bean>-->
 
 </beans>

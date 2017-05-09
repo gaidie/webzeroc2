@@ -6,4 +6,18 @@
          version="3.0"
         >
 
+        <!-- 定义shiro的listener和过滤器 -->
+        <listener>
+                <listener-class>org.apache.shiro.web.env.EnvironmentLoaderListener</listener-class>
+        </listener>
+
+        <filter>
+                <filter-name>ShiroFilter</filter-name>
+                <filter-class>org.apache.shiro.web.servlet.ShiroFilter</filter-class>
+        </filter>
+        <filter-mapping>
+                <filter-name>ShiroFilter</filter-name>
+                <url-pattern>/*</url-pattern>
+        </filter-mapping>
+
 </web-app>
